@@ -1,0 +1,39 @@
+{
+	"Makefile for cpp":
+	{
+		"prefix": "makefile_cpp",
+		"body":
+		[
+			"CC = c++",
+			"CFLAGS = -std=c++98 -MMD -Wall -Wextra -Werror -g3",
+			"SRC =\t./main.cpp",
+			"",
+			"NAME= ${1:name_of_the_program}",
+			"",
+			"OBJ = $(SRC:%.cpp=%.o)",
+			"DEP = $(SRC:%.cpp=%.d)",
+			"",
+			"all: $(NAME)",
+			"",
+			"$(NAME): $(OBJ)",
+			"\t$(CC) -o $(NAME) $(OBJ)",
+			"",
+			"%.o:%.cpp",
+			"\t$(CC) $(CFLAGS) -c $< -o $@",
+			"",
+			"clean:",
+			"\trm -rf $(OBJ) $(DEP)",
+			"",
+			"fclean:",
+			"\tmake clean -C .",
+			"\trm -rf $(NAME)",
+			"",
+			"re:",
+			"\tmake fclean -C .",
+			"\tmake all -C .",
+			"",
+			"-include $(DEP)% ",
+		],
+		"description": "Log output to console"
+	}
+}

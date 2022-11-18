@@ -1,0 +1,32 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key" : "ctrl+alt+c ctrl+alt+=",
+		"command" : "editor.action.insertSnippet",
+		"when" : "editorTextFocus",
+		"args": {
+			"langId": "cpp",
+			"name" : "defcpp"
+		}
+	}
+,
+	{
+		"key": "ctrl+alt+h ctrl+alt+=",
+		"command" : "editor.action.insertSnippet",
+			"when" : "editorTextFocus",
+			"args": {
+				"langId": "cpp",
+				"name" : "impcpp"
+			}
+	},
+	{
+		"key": "ctrl+alt+2 ctrl+alt+4",
+		"command": "42header.insertHeader",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+h",
+		"command": "-42header.insertHeader",
+		"when": "editorTextFocus"
+	}
+]
